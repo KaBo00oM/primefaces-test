@@ -13,7 +13,35 @@
 
         <h1>#{testView.string}</h1>
         <h:form id="frmTest">
-            
+            <p:outputPanel id="TreeTable1">
+                <h:outputText value="TreeTable 1: Children are set by the the Constructor of the DefaultTreeNode when given the Parent Node"/>
+                <p:treeTable value="#{testView.root1}" var="data">
+                    <p:column headerText="Level">
+                        <h:outputText value="#{data.level}"/>
+                    </p:column>
+                    <p:column headerText="Parent">
+                        <h:outputText value="#{data.cxParent}"/>
+                    </p:column>
+                    <p:column headerText="Data">
+                        <h:outputText value="#{data.uuid}"/>
+                    </p:column>
+                </p:treeTable>
+            </p:outputPanel>
+
+            <p:outputPanel id="TreeTable2">
+                <h:outputText value="TreeTable 2: Children in Level 2 are set via the setChilren() function in the Parent. This results in the Rowkey of the children being null because the are never set/updated"/>
+                <p:treeTable value="#{testView.root2}" var="data">
+                    <p:column headerText="Level">
+                        <h:outputText value="#{data.level}"/>
+                    </p:column>
+                    <p:column headerText="Parent">
+                        <h:outputText value="#{data.cxParent}"/>
+                    </p:column>
+                    <p:column headerText="Data">
+                        <h:outputText value="#{data.uuid}"/>
+                    </p:column>
+                </p:treeTable>
+            </p:outputPanel>
         </h:form>
 
     </h:body>

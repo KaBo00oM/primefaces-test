@@ -15,3 +15,9 @@ You can also use other versions with the available maven profiles: myfaces22, my
 `mvn clean jetty:run -Pmojarra22`
 
 `mvn clean jetty:run -Pmojarra23`
+
+-----------------------------------------------------------
+
+This a Demo Project to demonstrate a Bug in the setChildren(List<TreeNode> children).
+
+
