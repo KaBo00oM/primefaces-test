@@ -24,40 +24,21 @@ public class TestView implements Serializable {
     private BigDecimal decimal;
     private LocalDateTime localDateTime;
 
-    private DefaultTreeNode root1;
     private DefaultTreeNode root2;
     
     @PostConstruct  
     public void init() {
         string = "Tree Table Test";
-        initTree_1();
         initTree_2();
-    }
-
-    private void initTree_1(){
-        root1 = new DefaultTreeNode(new TreeNodeData("Root", "-", UUID.randomUUID().toString()));
-
-        DefaultTreeNode root1_lvl1_0 = new DefaultTreeNode(new TreeNodeData("Level 1", "root1", UUID.randomUUID()+"-0"), root1);
-        DefaultTreeNode root1_lvl1_1 = new DefaultTreeNode(new TreeNodeData("Level 1", "root1", UUID.randomUUID()+"-1"), root1);
-
-        new DefaultTreeNode(new TreeNodeData("Level 2", "root1_lvl1_0", UUID.randomUUID()+"-0"), root1_lvl1_0);
-        new DefaultTreeNode(new TreeNodeData("Level 2", "root1_lvl1_0", UUID.randomUUID()+"-1"), root1_lvl1_0);
-
-        new DefaultTreeNode(new TreeNodeData("Level 2", "root1_lvl1_1", UUID.randomUUID()+"-0"), root1_lvl1_1);
-        new DefaultTreeNode(new TreeNodeData("Level 2", "root1_lvl1_1", UUID.randomUUID()+"-1"), root1_lvl1_1);
-
     }
 
     private void initTree_2() {
         root2 = new DefaultTreeNode(new TreeNodeData("Root", "-", UUID.randomUUID().toString()));
 
         DefaultTreeNode root2_lvl1_0 = new DefaultTreeNode(new TreeNodeData("Level 1", "root2", UUID.randomUUID()+"-0"), root2);
-        new DefaultTreeNode(new TreeNodeData("Level 1", "root2", UUID.randomUUID()+"-1"), root2);
-        new DefaultTreeNode(new TreeNodeData("Level 1", "root2", UUID.randomUUID()+"-2"), root2);
 
         List<TreeNode> treeNodeList_Children_0 = new ArrayList<>();
         treeNodeList_Children_0.add(new DefaultTreeNode(new TreeNodeData("Level 2", "root2_lvl1_0", UUID.randomUUID()+"-0")));
-        treeNodeList_Children_0.add(new DefaultTreeNode(new TreeNodeData("Level 2", "root2_lvl1_0", UUID.randomUUID()+"-1")));
 
         root2_lvl1_0.setChildren(treeNodeList_Children_0);
 
